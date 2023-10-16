@@ -3,13 +3,15 @@ import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import * as THREE from "three";
 import { PresentationControls } from "@react-three/drei";
 import { EffectComposer, DepthOfField } from "@react-three/postprocessing";
+import { useControls } from "leva";
 
 import "./App.css";
 import Flowers from "./Flower";
 import Petals from "./Petal";
 
+
 export default function App({ depth = 80 }) {
-  // const color = useControls({ value: '#fa426b' })
+  // const color = useControls({ value: '#ff96ad' })
   // const [speed, setSpeed] = useState(0.01);
   const speed = useRef(0.01);
 
@@ -21,23 +23,23 @@ export default function App({ depth = 80 }) {
     return ((h[st] || b[st]) / ((h[sh] || b[sh]) - h.clientHeight)) * 100;
   }
 
-  useEffect(() => {
-    window.addEventListener("scroll", (event) => {
-      let position = getScrollPercent();
-      if (position < 30) {
-        speed.current = 0.005;
-      } else if (position > 30 && position < 90) {
-        speed.current = 0.01;
-      } else if (position > 90) {
-        speed.current = 0.05;
-      }
-    });
-  });
+  // useEffect(() => {
+  //   window.addEventListener("scroll", (event) => {
+  //     let position = getScrollPercent();
+  //     if (position < 30) {
+  //       speed.current = 0.005;
+  //     } else if (position > 30 && position < 90) {
+  //       speed.current = 0.01;
+  //     } else if (position > 90) {
+  //       speed.current = 0.05;
+  //     }
+  //   });
+  // });
 
   return (
     <>
       <Canvas gl={{ alpha: false }} camera={{ near: 0.01, far: 180, fov: 10 }}>
-        {/* <color attach="background" args={["#fa426b"]} /> */}
+        <color attach="background" args={['#ff96ad']} />
         <ambientLight intensity={3} />
         <Suspense>
           <PresentationControls

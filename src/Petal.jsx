@@ -38,7 +38,7 @@ function Petal({ z, speed, ...props }) {
   );
 }
 
-export default function Petals({ count = 100, speed }) {
+export default function Petals({ count = 40, speed }) {
   const { nodes, materials } = useGLTF("/petal.glb");
 
   return (

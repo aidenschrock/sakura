@@ -38,7 +38,7 @@ function Flower({ z, speed, ...props }) {
   );
 }
 
-export default function Flowers({ count = 60, speed }) {
+export default function Flowers({ count = 20, speed }) {
   const { nodes, materials } = useGLTF("/flower.glb");
 
   return (
